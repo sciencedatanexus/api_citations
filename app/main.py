@@ -52,3 +52,7 @@ def delete_item(item_id: int):
     global items
     items = [item for item in items if item.id != item_id]
     return {"message": "Item deleted successfully"}
+
+handler = Mangum(app)
+# This handler is used for AWS Lambda integration
+# If you're deploying to AWS Lambda, you can use the handler variable
